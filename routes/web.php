@@ -16,7 +16,6 @@ use App\Http\Controllers\quotationController;
 */
 Auth::routes();
 
-
 Route::get('/inicio', [HomeController::class, 'index'])->name('home');
 // modulo proveedores
 Route::get('/proveedores', [VendorController::class, 'index'])->name('vendors.index');

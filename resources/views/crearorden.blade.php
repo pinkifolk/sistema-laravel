@@ -11,5 +11,6 @@
     <label >Direccion</label>
     <label >Contacto</label>
     
+    <label></label>
 </form>
 @endsection

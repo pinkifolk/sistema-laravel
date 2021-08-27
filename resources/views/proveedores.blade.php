@@ -3,42 +3,47 @@
 @section('title','| Proveedores')
 
 @section('content')
+<div class="container">
     <h1>Proveedores</h1>
-        <a href="{{ route('vendors.create')}}">Crear</a>
-    <table>
-        <tr>
-            <th>Rut</th>
-            <th>Razon Social</th>
-            <th>Direccion</th>
-            <th>Telefono</th>
-            <th>Comuna</th>
-            <th>Region</th>
-            <th>Contacto</th>
-            <th>Email</th>
-            <th>Celular</th>
-            {{-- <th>Activo</th>
-            <th>Editar</th>
-            <th>Eliminar</th> --}}
-        </tr>
+        <a class="btn btn-outline-secondary" role="button" data-bs-toggle="button"" href="{{ route('vendors.create')}}">Crear</a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Rut</th>
+                <th scope="col">Razon Social</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Comuna</th>
+                <th scope="col">Region</th>
+                <th scope="col">Contacto</th>
+                <th scope="col">Email</th>
+                <th scope="col">Celular</th>
+            </tr>
+        </thead>
         @foreach ($vendors as $vendorsitem)
-        <tr>
-            <td>{{$vendorsitem->rut}}</td>
-            <td>{{$vendorsitem->razonSocial}}</td>
-            <td>{{$vendorsitem->direccion}}</td>
-            <td>{{$vendorsitem->telefono}}</td>
-            <td>{{$vendorsitem->comuna}}</td>
-            <td>{{$vendorsitem->ciudad}}</td>
-            <td>{{$vendorsitem->contacto}}</td>
-            <td>{{$vendorsitem->email}}</td>
-            <td>{{$vendorsitem->celular}}</td>
-            <td><a href="{{ route('vendors.edit', $vendorsitem) }}"><img src="/img/bxs-edit.svg" title="Editar" alt="editar"></a></td>
-            <td>
-                <form method="POST" action="{{ route('vendors.destroy', $vendorsitem) }}">
-                    @csrf @method('DELETE')
-                    <button>Eliminar</button>
-                </form>
-            </td>
-        </tr>    
+        <tbody>
+            <tr>
+                <td scope="row">{{$vendorsitem->rut}}</td>
+                <td scope="row">{{$vendorsitem->razonSocial}}</td>
+                <td scope="row">{{$vendorsitem->direccion}}</td>
+                <td scope="row">{{$vendorsitem->telefono}}</td>
+                <td scope="row">{{$vendorsitem->comuna}}</td>
+                <td scope="row">{{$vendorsitem->ciudad}}</td>
+                <td scope="row">{{$vendorsitem->contacto}}</td>
+                <td scope="row">{{$vendorsitem->email}}</td>
+                <td scope="row">{{$vendorsitem->celular}}</td>
+                <td scope="row"><a href="{{ route('vendors.edit', $vendorsitem) }}"><img src="/img/bxs-edit.svg" title="Editar" alt="editar"></a></td>
+                <td scope="row">
+                    <a href="{{ route('vendors.destroy', $vendorsitem) }}"  onclick="event.preventDefault();
+                    document.getElementById('destroy-form').submit();"><img src="/img/bx-x-circle.svg" title="eliminar" alt="eliminar"></a>
+                   
+                    <form id="destroy-form" method="POST" action="{{ route('vendors.destroy', $vendorsitem) }}">
+                        @csrf @method('DELETE')
+                    </form>
+                </td>
+            </tr>  
+        </tbody>  
         @endforeach
     </table>
+</div>
 @endsection
