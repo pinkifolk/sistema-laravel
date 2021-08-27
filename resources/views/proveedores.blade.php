@@ -14,6 +14,7 @@
             <th>Comuna</th>
             <th>Region</th>
             <th>Contacto</th>
+            <th>Email</th>
             <th>Celular</th>
             {{-- <th>Activo</th>
             <th>Editar</th>
@@ -28,6 +29,7 @@
             <td>{{$vendorsitem->comuna}}</td>
             <td>{{$vendorsitem->ciudad}}</td>
             <td>{{$vendorsitem->contacto}}</td>
+            <td>{{$vendorsitem->email}}</td>
             <td>{{$vendorsitem->celular}}</td>
             <td><a href="{{ route('vendors.edit', $vendorsitem) }}"><img src="/img/bxs-edit.svg" title="Editar" alt="editar"></a></td>
             <td>
