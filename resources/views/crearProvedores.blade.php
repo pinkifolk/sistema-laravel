@@ -32,9 +32,12 @@
                 @endforeach
             </select><br>
             {!! $errors->first('comuna','<small>:message</small><br>') !!}
-        <label>Email</label>
-            <input type="mail" name="contacto" placeholder="contacto@mail.com" value="{{ old('contacto')}}"><br>
+        <label>Contacto</label>    
+            <input type="text" name="contacto" value="{{ old('contacto')}}"><br>
             {!! $errors->first('contacto','<small>:message</small><br>') !!}
+        <label>Email</label>
+            <input type="mail" name="email" placeholder="contacto@mail.com" value="{{ old('email')}}"><br>
+            {!! $errors->first('email','<small>:message</small><br>') !!}
         <label>Celular</label>
             <input type="text" name="celular" value="{{ old('celular')}}"><br>
             {!! $errors->first('celular','<small>:message</small><br>') !!}

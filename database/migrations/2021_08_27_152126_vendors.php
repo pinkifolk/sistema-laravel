@@ -22,6 +22,7 @@ class Vendors extends Migration
             $table->string('ciudad');
             $table->string('comuna');
             $table->string('contacto');
+            $table->string('email');
             $table->string('celular');
             $table->timestamps();
         });

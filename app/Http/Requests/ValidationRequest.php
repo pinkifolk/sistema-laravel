@@ -30,7 +30,8 @@ class ValidationRequest extends FormRequest
             'telefono' => 'required',
             'ciudad' => 'required',
             'comuna' => 'required',
-            'contacto' => 'required|email',
+            'contacto' => 'required',
+            'email' => 'required|email',
             'celular' => 'required',
         ];
     }
