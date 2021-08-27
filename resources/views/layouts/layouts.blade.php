@@ -16,7 +16,7 @@
     <ul>
         <li><a href="{{ route('home') }}">Inicio</a></li>
        
-        <li><a href="#">Proveedores</a></li>
+        <li><a href="{{ route('vendors.index') }}">Proveedores</a></li>
         <li><a href="#">Orden de compra</a></li>
         <li><a href="#">Configuracion</a>
             <ul>

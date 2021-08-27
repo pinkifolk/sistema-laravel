@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layouts')
 
 @section('title','| Proveedores')
 
