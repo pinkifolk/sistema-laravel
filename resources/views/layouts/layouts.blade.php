@@ -40,7 +40,10 @@
                                 </li> 
                                 <li>
                                     <a class="dropdown-item" href="{{ route('city.index') }}">Regiones</a>
-                                </li>                        
+                                </li>  
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('commune.index') }}">Comunas</a>
+                                </li>                                                                    
                             </ul>
                         </li>                         
                     </ul>                    

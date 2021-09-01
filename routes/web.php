@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\quotationController;
 use App\Http\Controllers\RegionesController;
+use App\Http\Controllers\ComunasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,3 +34,6 @@ Route::get('/Ordendecompra/crear', [quotationController::Class, 'create'])->name
 //modulo de configuracion
 Route::get('configuracion/regiones',[RegionesController::Class,'index'])->name('city.index');
 Route::get('configuracion/regiones/actualizar',[RegionesController::Class,'store'])->name('city.store');
+
+Route::get('configuracion/comunas',[ComunasController::Class,'index'])->name('commune.index');
+Route::get('configuracion/comunas/actualizar',[ComunasController::Class,'store'])->name('commune.store');

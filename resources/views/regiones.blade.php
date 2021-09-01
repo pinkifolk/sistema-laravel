@@ -1,6 +1,6 @@
 @extends('layouts.layouts')
 
-@section('title','| Proveedores')
+@section('title','| Regiones')
 
 @section('content')
 <div class="container">

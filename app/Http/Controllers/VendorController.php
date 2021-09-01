@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Http;
 use App\Models\Vendor;
 use App\Models\Regione;
+use App\Models\Comuna;
 use App\Http\Requests\ValidationRequest;
 
 class VendorController extends Controller
@@ -19,8 +20,7 @@ class VendorController extends Controller
     public function create()
     {   
         $regiones = Regione::get();
-        $resultComunas = Http::get('https://apis.digital.gob.cl/dpa/comunas');
-        $comunas = $resultComunas->json();
+        $comunas = Comuna::get();
 
         return view('crearProvedores', compact('regiones','comunas'));
     }
@@ -33,11 +33,8 @@ class VendorController extends Controller
     }
     public function edit(Vendor $vendorsitem)
     {
-        $resultRegiones = Http::get('https://apis.digital.gob.cl/dpa/regiones');
-        $regiones = $resultRegiones->json();
-
-        $resultComunas = Http::get('https://apis.digital.gob.cl/dpa/comunas');
-        $comunas = $resultComunas->json();
+        $regiones = $regiones = Regione::get();
+        $comunas = Comuna::get();
 
         return view('editar',[
             'vendorsitem' => $vendorsitem,
