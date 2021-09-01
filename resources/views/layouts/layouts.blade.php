@@ -16,7 +16,7 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-while shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo" width="200" class="d-inline-block align-text-top"></a>
+            <a class="navbar-brand" href="/inicio"><img src="/img/logo.png" alt="logo" width="200" class="d-inline-block align-text-top"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -37,7 +37,10 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li>
                                     <a class="dropdown-item" href="#">Usuarios</a>
-                                </li>
+                                </li> 
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('city.index') }}">Regiones</a>
+                                </li>                        
                             </ul>
                         </li>                         
                     </ul>                    
@@ -65,5 +68,8 @@
     </nav>  
     @yield('content')
     @yield('js')
+    <footer>
+        <div class="p2"> © 2021 ARM</div>
+    </footer>
 </body>
 </html>

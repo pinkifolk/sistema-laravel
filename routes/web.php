@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\quotationController;
+use App\Http\Controllers\RegionesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +17,8 @@ use App\Http\Controllers\quotationController;
 */
 Auth::routes();
 
-Route::get('/inicio', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/inicio', [HomeController::class, 'inicio'])->name('home');
 // modulo proveedores
 Route::get('/proveedores', [VendorController::class, 'index'])->name('vendors.index');
 Route::get('/proveedores/crear', [VendorController::class, 'create'])->name('vendors.create');
@@ -28,3 +30,6 @@ Route::delete('/proveedores/{vendorsitem}', [VendorController::class, 'destroy']
 //modulo orden de compra
 Route::get('/Ordendecompra', [quotationController::Class, 'index'])->name('quotation.index');
 Route::get('/Ordendecompra/crear', [quotationController::Class, 'create'])->name('quotation.create');
+//modulo de configuracion
+Route::get('configuracion/regiones',[RegionesController::Class,'index'])->name('city.index');
+Route::get('configuracion/regiones/actualizar',[RegionesController::Class,'store'])->name('city.store');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Http;
 use App\Models\Vendor;
+use App\Models\Regione;
 use App\Http\Requests\ValidationRequest;
 
 class VendorController extends Controller
@@ -17,9 +18,7 @@ class VendorController extends Controller
 
     public function create()
     {   
-        $resultRegiones = Http::get('https://apis.digital.gob.cl/dpa/regiones');
-        $regiones = $resultRegiones->json();
-
+        $regiones = Regione::get();
         $resultComunas = Http::get('https://apis.digital.gob.cl/dpa/comunas');
         $comunas = $resultComunas->json();
 

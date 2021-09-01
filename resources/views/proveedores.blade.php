@@ -3,7 +3,7 @@
 @section('title','| Proveedores')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <h1>Proveedores</h1>
         <a class="btn btn-outline-secondary" role="button" data-bs-toggle="button"" href="{{ route('vendors.create')}}">Crear</a>
     <table class="table table-hover">
@@ -46,4 +46,5 @@
         @endforeach
     </table>
 </div>
+
 @endsection
