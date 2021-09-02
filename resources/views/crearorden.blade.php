@@ -5,12 +5,15 @@
 <form method="POST" action="">
     @csrf
     <label>Rut:</label>
-    <input type="text" name="rut">
+    <input type="text" name="rut"><br>
 
-    <label >Razon Social</label>
-    <label >Direccion</label>
-    <label >Contacto</label>
+    <label >Razon Social</label><br>
+    <label >Direccion</label><br>
+    <label >Contacto</label><br>
+    {{ date('Y-m-d') }} <br>
     
     <label></label>
+    <button>Crear detalle</button>
+    
 </form>
 @endsection

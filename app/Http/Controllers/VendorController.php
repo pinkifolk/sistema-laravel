@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Http;
 use App\Models\Vendor;
-use App\Models\Regione;
-use App\Models\Comuna;
+use App\Models\City;
+use App\Models\Commune;
 use App\Http\Requests\ValidationRequest;
 
 class VendorController extends Controller
@@ -19,8 +19,8 @@ class VendorController extends Controller
 
     public function create()
     {   
-        $regiones = Regione::get();
-        $comunas = Comuna::get();
+        $regiones = City::get();
+        $comunas = Commune::get();
 
         return view('crearProvedores', compact('regiones','comunas'));
     }
@@ -33,8 +33,8 @@ class VendorController extends Controller
     }
     public function edit(Vendor $vendorsitem)
     {
-        $regiones = $regiones = Regione::get();
-        $comunas = Comuna::get();
+        $regiones = $regiones = City::get();
+        $comunas = Commune::get();
 
         return view('editar',[
             'vendorsitem' => $vendorsitem,

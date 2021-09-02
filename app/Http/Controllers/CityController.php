@@ -2,23 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
 use Http;
-use App\Models\Regione;
+use App\Models\city;
 
-class RegionesController extends Controller
+class CityController extends Controller
 {
 
     public function index()
     {
-        $regionesGet = Regione::get();
+        $regionesGet = city::get();
         return view('regiones',compact('regionesGet'));
     }
 
     public function store()
     {
         
-        $regioneslist = Regione::count('id');
+        $regioneslist = city::count('id');
 
         $resultRegiones = Http::get('https://apis.digital.gob.cl/dpa/regiones?orderBy=codigo&orderDir=asc');
         
@@ -32,13 +32,13 @@ class RegionesController extends Controller
            
         }else{
 
-            Regione::truncate();
+            city::truncate();
 
             $resultRegiones = Http::get('https://apis.digital.gob.cl/dpa/regiones?orderBy=codigo&orderDir=asc');
             $regiones = $resultRegiones->json();
 
                 foreach($regiones as $row){
-                    Regione::create(['codigo' => $row['codigo'],
+                    city::create(['codigo' => $row['codigo'],
                                     'nombre' => $row["nombre"]                
                     ]);
                 }

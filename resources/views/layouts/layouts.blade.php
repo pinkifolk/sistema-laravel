@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-while shadow-sm">
@@ -43,6 +43,9 @@
                                 </li>  
                                 <li>
                                     <a class="dropdown-item" href="{{ route('commune.index') }}">Comunas</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('company.index') }}">Empresa</a>
                                 </li>                                                                    
                             </ul>
                         </li>                         
@@ -70,7 +73,8 @@
         </div>
     </nav>  
     @yield('content')
-    @yield('js')
+    <script src="{{ asset('js/bootstrap.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/popper.min.js') }}" type="text/javascript"></script>
     <footer>
         <div class="p2"> © 2021 ARM</div>
     </footer>

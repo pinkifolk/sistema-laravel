@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Comunas extends Migration
+class Commune extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Comunas extends Migration
      */
     public function up()
     {
-        Schema::create('comunas', function (Blueprint $table) {
+        Schema::create('Communes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre');            
             $table->timestamps();
@@ -27,6 +27,6 @@ class Comunas extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comunas');
+        Schema::dropIfExists('Communes');
     }
 }

@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\quotationController;
-use App\Http\Controllers\RegionesController;
-use App\Http\Controllers\ComunasController;
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\CommuneController;
+use App\Http\Controllers\CompanyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,9 +32,14 @@ Route::delete('/proveedores/{vendorsitem}', [VendorController::class, 'destroy']
 //modulo orden de compra
 Route::get('/Ordendecompra', [quotationController::Class, 'index'])->name('quotation.index');
 Route::get('/Ordendecompra/crear', [quotationController::Class, 'create'])->name('quotation.create');
-//modulo de configuracion
-Route::get('configuracion/regiones',[RegionesController::Class,'index'])->name('city.index');
-Route::get('configuracion/regiones/actualizar',[RegionesController::Class,'store'])->name('city.store');
 
-Route::get('configuracion/comunas',[ComunasController::Class,'index'])->name('commune.index');
-Route::get('configuracion/comunas/actualizar',[ComunasController::Class,'store'])->name('commune.store');
+//modulo de configuracion
+Route::get('configuracion/regiones',[CityController::Class,'index'])->name('city.index');
+Route::get('configuracion/regiones/actualizar',[CityController::Class,'store'])->name('city.store');
+
+Route::get('configuracion/comunas',[CommuneController::Class,'index'])->name('commune.index');
+Route::get('configuracion/comunas/actualizar',[CommuneController::Class,'store'])->name('commune.store');
+
+Route::get('configuracion/empresa',[CompanyController::Class,'index'])->name('company.index');
+Route::get('configuracion/empresa/crear',[CompanyController::Class,'create'])->name('company.create');
+Route::post('configuracion/empresa/crear',[CompanyController::Class,'store'])->name('company.store');

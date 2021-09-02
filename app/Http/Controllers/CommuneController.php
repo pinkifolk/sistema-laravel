@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Http;
-use App\Models\Comuna;
+use App\Models\Commune;
 
-class ComunasController extends Controller
+class CommuneController extends Controller
 {
     public function index()
     {   
-        $comunasGet= Comuna::paginate(15);
+        $comunasGet= Commune::paginate(15);
         return view('comunas', compact('comunasGet'));
     }
     public function store()
     {
-        $comunaslist = Comuna::count('id');
+        $comunaslist = Commune::count('id');
 
         $resultComunas = Http::get('https://apis.digital.gob.cl/dpa/comunas');
         
@@ -29,13 +29,13 @@ class ComunasController extends Controller
            
         }else{
 
-            Comuna::truncate();
+            Commune::truncate();
 
             $resultComunas = Http::get('https://apis.digital.gob.cl/dpa/comunas');
             $comunas = $resultComunas->json();
 
                 foreach($comunas as $row){
-                    Comuna::create(['nombre' => $row["nombre"]                
+                    Commune::create(['nombre' => $row["nombre"]                
                     ]);
                 }
                $mensaje ="Se actualizaron correctamente";

@@ -24,12 +24,6 @@
         </tbody>  
         @endforeach
     </table>
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            {{ $comunasGet->links() }}
-          </li>
-        </ul>
-    </nav>
+        {{ $comunasGet->links() }}
 </div>
 @endsection
