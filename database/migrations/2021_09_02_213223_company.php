@@ -18,9 +18,10 @@ class Company extends Migration
             $table->string('rut');
             $table->string('razonSocial');
             $table->string('direccion');
-            $table->string('tel');
+            $table->string('telefono');
             $table->string('fax');
-            $table->string('ciudad');
+            $table->string('region');
+            $table->string('comuna');
             $table->timestamps();
         });
     }

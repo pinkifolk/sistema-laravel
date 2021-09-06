@@ -1,41 +1,41 @@
 @extends('layouts.layouts')
 
-@section('title','| Crear Empresa')
+@section('title','| Editar Empresa')
 
 @section('content')
-    <h1>Crear Empresa</h1>
-    <form method="POST" action="{{ route('company.store') }}">
-        @csrf
+    <h1>Editar Empresa</h1>
+    <form method="POST" action="{{ route('company.update', $companyGetitem) }}">
+        @csrf @method('PATCH')
         <label>Rut</label>
-            <input type="text" name="rut" placeholder="11111111-2" value="{{ old('rut')}}"><br>
+            <input type="text" name="rut" value="{{ $companyGetitem->rut }}"><br>
             {!! $errors->first('rut','<small>:message</small><br>') !!}
         <label>Razon Social</label>
-            <input type="text" name="razonSocial" value="{{ old('razonSocial')}}"><br>
+            <input type="text" name="razonSocial" value="{{ $companyGetitem->razonSocial }}"><br>
             {!! $errors->first('razonSocial','<small>:message</small><br>') !!}
         <label>Direccion</label>
-            <input type="text" name="direccion" value="{{ old('direccion')}}"><br>
+            <input type="text" name="direccion" value="{{ $companyGetitem->direccion }}"><br>
             {!! $errors->first('direccion','<small>:message</small><br>') !!}
         <label>Telefono</label>
-            <input type="text" name="telefono" value="{{ old('telefono')}}"><br>
+            <input type="text" name="telefono" value="{{ $companyGetitem->telefono }}"><br>
             {!! $errors->first('telefono','<small>:message</small><br>') !!}
         <label>Fax</label>
-            <input type="text" name="fax" value="{{ old('fax')}}"><br>
+            <input type="text" name="fax" value="{{ $companyGetitem->fax }}"><br>
             {!! $errors->first('fax','<small>:message</small><br>') !!}
         <label>Region</label>
-            <select name="region" value="{{ old('region')}}">
+            <select name="region" value="{{ old('region') }}">
                 @foreach ($regiones as $regionesitem)
                     <option value="{{ $regionesitem['nombre']}}">{{ $regionesitem['nombre']}}</option>
                 @endforeach
             </select><br>
             {!! $errors->first('region','<small>:message</small><br>') !!}
         <label>Comuna</label>
-            <select name="comuna" value="{{ old('comuna')}}">
+            <select name="comuna" value="{{ old('comuna') }}">
                 @foreach ($comunas as $comunasitem)
                     <option value="{{ $comunasitem['nombre']}}">{{ $comunasitem['nombre']}}</option>
                 @endforeach
             </select><br>
             {!! $errors->first('comuna','<small>:message</small><br>') !!}
-        <button>Crear</button>
+        <button>Actualizar</button>
     </form>
 
 @endsection

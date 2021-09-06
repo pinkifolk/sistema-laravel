@@ -43,3 +43,5 @@ Route::get('configuracion/comunas/actualizar',[CommuneController::Class,'store']
 Route::get('configuracion/empresa',[CompanyController::Class,'index'])->name('company.index');
 Route::get('configuracion/empresa/crear',[CompanyController::Class,'create'])->name('company.create');
 Route::post('configuracion/empresa/crear',[CompanyController::Class,'store'])->name('company.store');
+Route::get('configuracion/empresa/editar/{companyGetitem}',[CompanyController::Class,'edit'])->name('company.edit');
+Route::patch('configuracion/empresa/editar/{companyGetitem}',[CompanyController::Class,'update'])->name('company.update');
