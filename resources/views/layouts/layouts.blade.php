@@ -30,24 +30,21 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('quotation.index') }}">Orden de compra</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Configuracion
-                            </a>
-                            
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li>
-                                    <a class="dropdown-item" href="#">Usuarios</a>
-                                </li> 
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('city.index') }}">Regiones</a>
-                                </li>  
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('commune.index') }}">Comunas</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('company.index') }}">Empresa</a>
-                                </li>                                                                    
-                            </ul>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Configuracion</a>                            
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="#">Usuarios</a>
+                                    </li> 
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('city.index') }}">Regiones</a>
+                                    </li>  
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('commune.index') }}">Comunas</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('company.index') }}">Empresa</a>
+                                    </li>                                                                    
+                                </ul>
                         </li>                         
                     </ul>                    
                 </div> 

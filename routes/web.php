@@ -32,7 +32,7 @@ Route::delete('/proveedores/{vendorsitem}', [VendorController::class, 'destroy']
 //modulo orden de compra
 Route::get('/Ordendecompra', [quotationController::Class, 'index'])->name('quotation.index');
 Route::get('/Ordendecompra/crear', [quotationController::Class, 'create'])->name('quotation.create');
-
+Route::post('/Ordendecompra/crear/search', [quotationController::Class, 'search'])->name('quotation.search');
 //modulo de configuracion
 Route::get('configuracion/regiones',[CityController::Class,'index'])->name('city.index');
 Route::get('configuracion/regiones/actualizar',[CityController::Class,'store'])->name('city.store');
@@ -45,3 +45,4 @@ Route::get('configuracion/empresa/crear',[CompanyController::Class,'create'])->n
 Route::post('configuracion/empresa/crear',[CompanyController::Class,'store'])->name('company.store');
 Route::get('configuracion/empresa/editar/{companyGetitem}',[CompanyController::Class,'edit'])->name('company.edit');
 Route::patch('configuracion/empresa/editar/{companyGetitem}',[CompanyController::Class,'update'])->name('company.update');
+
