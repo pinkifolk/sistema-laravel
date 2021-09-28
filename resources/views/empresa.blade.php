@@ -4,8 +4,9 @@
 
 @section('content')
 <div class="container">
-    <h1>Empresa</h1>
-    <a class="btn btn-outline-secondary" role="button" data-bs-toggle="button"" href="{{ route('company.create')}}">Crear</a>
+    <h1>Empresa</h1> 
+        <a class="btn btn-outline-secondary" role="button" data-bs-toggle="button"" href="{{ route('company.create')}}">Crear</a>
+        <p class="text-danger">Solo se puede crear una sola empresa</p>
     @include('layouts.mensajesStatus')
     <table class="table table-hover">
         <thead>

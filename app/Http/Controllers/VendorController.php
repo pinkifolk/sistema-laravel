@@ -13,7 +13,7 @@ class VendorController extends Controller
 {
     public function index()
     {
-        $vendors = Vendor::get();
+        $vendors = Vendor::paginate(4);
         return view('proveedores',compact('vendors'));
     }
 

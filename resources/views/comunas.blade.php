@@ -24,6 +24,8 @@
         </tbody>  
         @endforeach
     </table>
-        {{ $comunasGet->links() }}
+    <div class="d-flex justify-content-center">
+        {{ $comunasGet->links('pagination::bootstrap-4') }}
+    </div>
 </div>
 @endsection

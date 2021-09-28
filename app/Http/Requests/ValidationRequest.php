@@ -24,7 +24,7 @@ class ValidationRequest extends FormRequest
     public function rules()
     {
         return [
-            'rut' => 'required|min:10',
+            'rut' => 'required|min:9',
             'razonSocial' => 'required',
             'direccion' => 'required',
             'telefono' => 'required',

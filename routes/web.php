@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/inicio', [HomeController::class, 'inicio'])->name('home');
 // modulo proveedores
+
 Route::get('/proveedores', [VendorController::class, 'index'])->name('vendors.index');
 Route::get('/proveedores/crear', [VendorController::class, 'create'])->name('vendors.create');
 Route::post('/proveedores/crear', [VendorController::class, 'store'])->name('vendors.store');

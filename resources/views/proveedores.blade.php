@@ -45,6 +45,9 @@
         </tbody>  
         @endforeach
     </table>
+    <div class="d-flex justify-content-center">
+        {!! $vendors->links('pagination::bootstrap-4') !!}
+    </div>
 </div>
 
 @endsection
