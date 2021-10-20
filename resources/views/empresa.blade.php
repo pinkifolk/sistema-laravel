@@ -5,8 +5,11 @@
 @section('content')
 <div class="container">
     <h1>Empresa</h1> 
-        <a class="btn btn-outline-secondary" role="button" data-bs-toggle="button"" href="{{ route('company.create')}}">Crear</a>
-        <p class="text-danger">Solo se puede crear una sola empresa</p>
+    @if($companyGet->count() > 0)
+        <p class="text-danger p-1">Solo se puede crear una sola empresa</p>
+    @else
+    <a class="btn btn-outline-secondary" role="button" data-bs-toggle="button"" href="{{ route('company.create')}}">Crear</a>
+    @endif       
     @include('layouts.mensajesStatus')
     <table class="table table-hover">
         <thead>
