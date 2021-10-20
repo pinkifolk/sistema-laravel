@@ -6,7 +6,7 @@
 <div class="container">
     <h1>Comunas</h1>
 
-    <a class="btn btn-outline-secondary" role="button" data-bs-toggle="button"" href="{{ route('commune.store')}}">Actualizar</a>
+    <a class="btn btn-outline-secondary" role="button" data-bs-toggle="button" href="{{ route('commune.store')}}">Actualizar</a>
 
     @include('layouts.mensajesStatus')
 

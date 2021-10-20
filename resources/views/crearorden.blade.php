@@ -10,12 +10,31 @@
 </form>
 
 @if(isset($getData))
-    @forelse ( $getData as $getDataItem)
-        <label>Rut:</label> {{  $getDataItem->rut }}<br>
-        <label>Razon Social:</label> {{  $getDataItem->razonSocial }}<br>
-        <label>Direccion:</label> {{  $getDataItem->direccion }}<br>
-        <label>Contacto:</label> {{  $getDataItem->contacto }}<br>
-        <label>Fecha:</label> {{ date('Y-m-d') }} <br>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Rut</th>
+                <th scope="col">Razon Social</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Contacto</th>
+                <th scope="col">Email</th>
+                <th scope="col">Crear OC</th>
+            </tr>
+        </thead>
+    
+        @forelse ( $getData as $getDataItem)
+        <tbody>
+            <tr>
+                <td scope="row">{{$getDataItem->rut}}</td>
+                <td scope="row">{{$getDataItem->razonSocial}}</td>
+                <td scope="row">{{$getDataItem->direccion}}</td>
+                <td scope="row">{{$getDataItem->celular}}</td>
+                <td scope="row">{{$getDataItem->contacto}}</td>
+                <td scope="row">{{$getDataItem->email}}</td>
+                <td scope="row"><a href="#"><img src="/img/bx-play.svg" title="Editar" alt="editar"></a></td>            
+            </tr>  
+        </tbody>  
     @empty
         <p>No existe</p>
     @endforelse

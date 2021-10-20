@@ -50,6 +50,6 @@ class VendorController extends Controller
     public function destroy(Vendor $vendorsitem)
     {
         $vendorsitem->delete();
-        return redirect()->route('vendors.index');
+        return redirect()->route('vendors.index')->with('eliminar','ok');
     }
 }

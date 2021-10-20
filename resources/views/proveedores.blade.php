@@ -1,7 +1,6 @@
 @extends('layouts.layouts')
 
-@section('title','| Proveedores')
-
+@section('title','| Proveedores') 
 @section('content')
 <div class="container-fluid">
     <h1>Proveedores</h1>
@@ -34,13 +33,12 @@
                 <td scope="row">{{$vendorsitem->celular}}</td>
                 <td scope="row"><a href="{{ route('vendors.edit', $vendorsitem) }}"><img src="/img/bxs-edit.svg" title="Editar" alt="editar"></a></td>
                 <td scope="row">
-                    <a href="{{ route('vendors.destroy', $vendorsitem) }}"  onclick="event.preventDefault();
-                    document.getElementById('destroy-form').submit();"><img src="/img/bx-x-circle.svg" title="eliminar" alt="eliminar"></a>
-                   
-                    <form id="destroy-form" method="POST" action="{{ route('vendors.destroy', $vendorsitem) }}">
-                        @csrf @method('DELETE')
+                    <form id="destroy-item" method="POST" action="{{ route('vendors.destroy', $vendorsitem) }}">
+                        @csrf @method('DELETE')     
+                        <button style="background:none;color:inherit;border:none;padding:0;font:inherit;cursor:pointer;outline:inherit;"><img src="/img/bx-x-circle.svg" title="Eliminar" alt="Eliminar"></button>                                  
                     </form>
                 </td>
+                <td></td>
             </tr>  
         </tbody>  
         @endforeach
@@ -48,6 +46,28 @@
     <div class="d-flex justify-content-center">
         {!! $vendors->links('pagination::bootstrap-4') !!}
     </div>
-</div>
+</div>  
+@endsection
+@section('js')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+        $("#destroy-item").submit(function(e){
+        e.preventDefault();
+        Swal.fire({
+                title: 'Estas Seguro?',
+                text: "Si eliminas este registro no podras crear nuevas Ordenes",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Eliminar'
+            }).then((result) => {
+                if (result.isConfirmed) {            
+                    this.submit();
+                }
+            })
+        });
 
+    
+</script>
 @endsection

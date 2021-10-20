@@ -12,6 +12,7 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-while shadow-sm">
@@ -70,10 +71,11 @@
         </div>
     </nav>  
     @yield('content')
-    <script src="{{ asset('js/bootstrap.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/popper.min.js') }}" type="text/javascript"></script>
+    
     <footer>
         <div class="p2"> © 2021 ARM</div>
     </footer>
+
+    @yield('js')
 </body>
 </html>
