@@ -14,12 +14,7 @@ class quotationController extends Controller
 
     public function create()
     {
-        return view('crearorden');
-    }
-    public function search(request $request)
-    {
-        $rut = $request->get('rut');
-        $getData = Vendor::where('rut','=',$rut)->get();
-        return view('crearorden',compact('getData'));
+        $getRut= Vendor::get('rut');
+        return view('crearorden',compact('getRut'));
     }
 }

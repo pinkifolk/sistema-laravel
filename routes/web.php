@@ -33,7 +33,6 @@ Route::delete('/proveedores/{vendorsitem}', [VendorController::class, 'destroy']
 //modulo orden de compra
 Route::get('/Ordendecompra', [quotationController::Class, 'index'])->name('quotation.index');
 Route::get('/Ordendecompra/crear', [quotationController::Class, 'create'])->name('quotation.create');
-Route::post('/Ordendecompra/crear/search', [quotationController::Class, 'search'])->name('quotation.search');
 //modulo de configuracion
 Route::get('configuracion/regiones',[CityController::Class,'index'])->name('city.index');
 Route::get('configuracion/regiones/actualizar',[CityController::Class,'store'])->name('city.store');

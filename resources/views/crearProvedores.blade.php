@@ -20,7 +20,7 @@
             {!! $errors->first('telefono','<small>:message</small><br>') !!}
         <label>Region</label>
             <select  name="ciudad" value="{{ old('ciudad')}}">
-                <option value="0">Regiones</option>
+                <option value="">Regiones</option>
                 @foreach ($regiones as $regionesitem)
                     <option value="{{ $regionesitem['nombre']}}">{{ $regionesitem['nombre']}}</option>
                 @endforeach
@@ -28,7 +28,7 @@
             {!! $errors->first('ciudad','<small>:message</small><br>') !!}
         <label>Comuna</label>
             <select name="comuna" value="{{ old('comuna')}}">
-                <option value="0">Comunas</option>
+                <option value="">Comunas</option>
                 @foreach ($comunas as $comunasitem)
                     <option value="{{ $comunasitem['nombre']}}">{{ $comunasitem['nombre']}}</option>
                 @endforeach
